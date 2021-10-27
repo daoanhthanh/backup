@@ -22,7 +22,7 @@ while True:
 
     except Exception:
         print("\n" + Fore.RED + Back.GREEN +
-              "!!! Please enter the appropriate number value of the VIDEO: " + Style.RESET_ALL)
+              "!!! Please enter the appropriate number value of VIDEO: " + Style.RESET_ALL)
         print(Fore.CYAN + "!NOTE: support any type of video file format: .mp4 (mpeg-4), .mkv, .avi, .mov..." + Style.RESET_ALL)
         for i in onlyfiles:
             print(str(onlyfiles.index(i) + 1) + ": " + i)

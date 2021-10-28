@@ -11,8 +11,11 @@ style = "bold red"
 format = "via [🐋 $context](blue bold)"
 
 [character]
-success_symbol = "[💲](normal)"
-error_symbol = "[🚫](normal) "
+#success_symbol = "[💲](normal)"
+#error_symbol = "[🚫](normal) "
+success_symbol = "[Edward ❯](green)"
+error_symbol = "[Edward ❯](red) "
+
 
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
@@ -78,9 +81,9 @@ disabled = true
 format = "[$symbol$version]($style) "
 style = "bold green"
 
-[rust]
-format = "[$symbol$version]($style) "
-style = "bold green"
+[nodejs]
+symbol = "🍃 "
+version_format = "v${raw}"
 
 #[time]
 #time_format = "%T"

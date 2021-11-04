@@ -3,10 +3,6 @@ full_symbol = "🔋"
 charging_symbol = "🔌"
 discharging_symbol = "⚡"
 
-[[battery.display]]
-threshold = 30
-style = "bold red"
-
 [docker_context]
 format = "via [🐋 $context](blue bold)"
 
@@ -51,18 +47,6 @@ deleted = "🗑️×${count} "
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
-[hostname]
-ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
-
-[julia]
-format = "[$symbol$version]($style) "
-symbol = "ஃ "
-style = "bold green"
-
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 70
@@ -74,8 +58,8 @@ symbol = "♨️"
 version_format = "v${major}"
 style = "#61cf7e"
 
-[package]
-disabled = true
+#[package]
+#disabled = false
 
 [python]
 format = "[$symbol$version]($style) "
@@ -85,12 +69,8 @@ style = "bold green"
 symbol = "🍃 "
 version_format = "v${raw}"
 
-#[time]
-#time_format = "%T"
-#format = "🕙 $time($style) "
-#style = "bright-white"
-#disabled = true
-
-[username]
-style_user = "bold dimmed blue"
-show_always = false
+[time]
+time_format = "%H:%M"
+format = "🕙 $time($style) "
+style = "bright-white"
+disabled = false

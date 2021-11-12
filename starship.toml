@@ -54,7 +54,7 @@ style = "bold dimmed white"
 disabled = false
 
 [java]
-symbol = "♨️"
+symbol = "♨️ "
 version_format = "v${major}"
 style = "#61cf7e"
 

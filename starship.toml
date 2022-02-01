@@ -1,3 +1,6 @@
+# general settings
+command_timeout = 1000
+
 [battery]
 full_symbol = "🔋"
 charging_symbol = "🔌"
@@ -58,8 +61,11 @@ symbol = "♨️ "
 version_format = "v${major}"
 style = "#61cf7e"
 
-#[package]
-#disabled = false
+[scala]
+style = "red"
+
+[package]
+disabled = false
 
 [python]
 format = "[$symbol$version]($style) "

@@ -37,7 +37,7 @@ style = "bold white"
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
-conflicted = "⚔️ "
+conflicted = "️💀 "
 ahead = "🚀×${count} "
 behind = "🐢×${count} "
 diverged = "🔱 🚀×${ahead_count} 🐢×${behind_count} "
@@ -51,18 +51,16 @@ style = "bright-white"
 format = "$all_status$ahead_behind"
 
 [memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
+format = "$symbol[${ram_pct}( | ${swap_pct})]($style) "
 threshold = 70
 style = "bold dimmed white"
+symbol = "💦 "
 disabled = false
 
 [java]
-symbol = "♨️ "
+symbol = "🔥 "
 version_format = "v${major}"
-style = "#61cf7e"
-
-[scala]
-style = "red"
+style = "bold #e05012"
 
 [package]
 disabled = false

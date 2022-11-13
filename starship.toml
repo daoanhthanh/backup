@@ -1,5 +1,5 @@
 # general settings
-command_timeout = 1000
+command_timeout = 5000
 
 [battery]
 full_symbol = "🔋"
@@ -7,13 +7,13 @@ charging_symbol = "🔌"
 discharging_symbol = "⚡"
 
 [docker_context]
-format = "via [🐋 $context](blue bold)"
+format = "via [🐳 $context ](blue bold)"
 
 [character]
 #success_symbol = "[💲](normal)"
 #error_symbol = "[🚫](normal) "
-success_symbol = "[Edward ❯](green)"
-error_symbol = "[Edward ❯](red) "
+success_symbol = "[Edward D. ❯](green)"
+error_symbol = "[Edward D. ❯](red)"
 
 
 [cmd_duration]
@@ -42,7 +42,7 @@ ahead = "🚀×${count} "
 behind = "🐢×${count} "
 diverged = "🔱 🚀×${ahead_count} 🐢×${behind_count} "
 untracked = "🛤️×${count} "
-stashed = "📦 "
+stashed = "⛔📦 "
 modified = "📝×${count} "
 staged = "🗃️×${count} "
 renamed = "📛×${count} "
@@ -52,8 +52,8 @@ format = "$all_status$ahead_behind"
 
 [memory_usage]
 format = "$symbol[${ram_pct}( | ${swap_pct})]($style) "
-threshold = 70
-style = "bold dimmed white"
+threshold = -1
+style = "bold white"
 symbol = "💦 "
 disabled = false
 

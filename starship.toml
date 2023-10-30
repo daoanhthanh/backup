@@ -12,12 +12,12 @@ format = "via [🐳 $context ](blue bold)"
 [character]
 #success_symbol = "[💲](normal)"
 #error_symbol = "[🚫](normal) "
-success_symbol = "[Edward D. ❯](green)"
-error_symbol = "[Edward D. ❯](red)"
+success_symbol = "[Đào T. ❯](green)"
+error_symbol = "[Đào T. ❯](red)"
 
 
 [cmd_duration]
-min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
+min_time = 10_000                    # Show command duration over 10,000 milliseconds (=10 sec)
 format = " took [$duration]($style)"
 
 [directory]
@@ -78,3 +78,15 @@ time_format = "%H:%M"
 format = "🕙 $time($style) "
 style = "bright-white"
 disabled = false
+
+[kubernetes]
+format = 'on [⛵ $context \($namespace\)](red) '
+disabled = false
+[kubernetes.context_aliases]
+'dev.local.cluster.k8s' = 'dev'
+'.*/openshift-cluster/.*' = 'openshift'
+'gke_.*_(?P<var_cluster>[\w-]+)' = 'gke-$var_cluster'
+[kubernetes.user_aliases]
+'gke_.*_(?P<var_cluster>[\w-]+)' = 'use: gke-$var_cluster'
+'dev.local.cluster.k8s' = 'dev'
+'root/.*' = 'root'

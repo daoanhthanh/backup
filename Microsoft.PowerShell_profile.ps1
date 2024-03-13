@@ -194,7 +194,7 @@ Set-Alias -Name k -Value kubectl
 function List-Context {
   kubectl config get-contexts
 }
-Set-Alias -Name getContexts -Value "kubectl config get-contexts"
+Set-Alias -Name kctx -Value "kubectl config get-contexts"
 
 function UseContext {
   param(

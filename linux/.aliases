@@ -29,22 +29,43 @@ alias cralydev='./cloud_sql_proxy -instances=pyxis-enterprise:asia-northeast1:di
 alias cralystg='./cloud_sql_proxy -instances=pyxis-enterprise:asia-northeast1:prod-4398-check-clone=tcp:5555'
 alias cralyprod='./cloud_sql_proxy -instances=pyxis-enterprise:asia-northeast1:digdag-ee-prod=tcp:3366,pyxis-enterprise:asia-northeast1:pyxisee-prod=tcp:5433'
 alias cl='clear'
-alias hist='vim ~/.zsh_history'
+alias hist='vim ~/.bash_history'
 alias cdcr='cd ~/Documents/Flinters/project/customed_report'
 alias cdcraly='cd ~/Documents/Flinters/project/craly'
-alias cded='cd ~/Documents/Flinters/thanh_da'
-alias thanh_da='cd ~/Documents/Flinters/thanh_da'
+alias cded='cd ~/Documents/ANP'
+alias thanhda='cd ~/Documents/ANP'
 alias k=kubectl
+alias kgd='kubectl get deployment'
 alias getContexts="kubectl config get-contexts"
 alias useContext="kubectl config use-context"
+alias setContext="kubectl config set-context"
 alias cpToken='kubectl -n kubernetes-dashboard create token k8sadmin | pbcopy'
 alias delothers='git branch | grep -v $(this) | xargs git branch -D'
 alias sbtAkka='sbt new akka/akka-scala-seed.g8'
 alias sbtPure='sbt new scala/scala-seed.g8'
 alias initMill='mill -i init com-lihaoyi/mill-scala-hello.g8'
+alias spt='speedtest -u MB/s'
+# alias reload
+# Set up 'report' alias for sharing configuration files with Zorin help
+# Use it like this:
+# dmesg | report
+# cat /etc/default/grub | report
+alias report="curl -F 'file=@-' 0x0.st"
+
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
+
+reload() {
+  MY_SHELL=$(ps -p $$ -ocomm=)
+  if [[ $MY_SHELL == "bash" ]]; then
+    source ~/.bashrc
+  elif [[ $MY_SHELL == "zsh" ]]; then
+    source ~/.zshrc
+  else
+    echo "Unknown shell: $MY_SHELL"
+  fi
+}
 
 mkcd() {
   case "$1" in

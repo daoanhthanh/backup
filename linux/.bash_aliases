@@ -69,6 +69,14 @@ reload() {
   fi
 }
 
+function rider() {
+  /snap/bin/rider "$1" >/dev/null 2>&1 &
+}
+
+function wbst() {
+  /snap/bin/webstorm "$1" >/dev/null 2>&1 &
+}
+
 mkcd() {
   case "$1" in
   */.. | */../) cd -- "$1" ;; # that doesn't make any sense unless the directory already exists

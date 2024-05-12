@@ -60,9 +60,9 @@ alias ....='cd ../../../'
 
 reload() {
   MY_SHELL=$(ps -p $$ -ocomm=)
-  if [[ $MY_SHELL == "bash" ]]; then
+  if [[ $MY_SHELL == *"bash"* ]]; then
     source ~/.bashrc
-  elif [[ $MY_SHELL == "zsh" ]]; then
+  elif [[ $MY_SHELL == *"zsh"* ]]; then
     source ~/.zshrc
   else
     echo "Unknown shell: $MY_SHELL"

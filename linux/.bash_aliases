@@ -53,6 +53,7 @@ alias spt='speedtest -u MB/s'
 # dmesg | report
 # cat /etc/default/grub | report
 alias report="curl -F 'file=@-' 0x0.st"
+alias lzd='lazydocker'
 
 alias ..='cd ../'
 alias ...='cd ../../'

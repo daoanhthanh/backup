@@ -47,6 +47,8 @@ alias sbtAkka='sbt new akka/akka-scala-seed.g8'
 alias sbtPure='sbt new scala/scala-seed.g8'
 alias initMill='mill -i init com-lihaoyi/mill-scala-hello.g8'
 alias spt='speedtest -u MB/s'
+alias ls='lsd'
+
 # alias reload
 # Set up 'report' alias for sharing configuration files with Zorin help
 # Use it like this:

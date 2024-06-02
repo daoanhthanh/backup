@@ -5,7 +5,7 @@ alias push='git push'
 alias st='git status'
 alias pull='git pull'
 alias branch='git branch'
-alias branches='git branch -a'
+# alias branches='git branch -a'
 alias ck='git checkout'
 alias add='git add'
 alias addAll='git add .'
@@ -39,8 +39,6 @@ alias kgd='kubectl get deployment'
 alias getContexts="kubectl config get-contexts"
 alias useContext="kubectl config use-context"
 alias setContext="kubectl config set-context"
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 alias cpToken='kubectl -n kubernetes-dashboard create token k8sadmin | pbcopy'
 alias delothers='git branch | grep -v $(this) | xargs git branch -D'
 alias sbtAkka='sbt new akka/akka-scala-seed.g8'
@@ -48,6 +46,7 @@ alias sbtPure='sbt new scala/scala-seed.g8'
 alias initMill='mill -i init com-lihaoyi/mill-scala-hello.g8'
 alias spt='speedtest -u MB/s'
 alias ls='lsd'
+alias batThemes='bat --list-themes | fzf --preview="bat --theme={} --color=always ~/.theme_preview.ts"'
 
 # alias reload
 # Set up 'report' alias for sharing configuration files with Zorin help
@@ -72,13 +71,13 @@ reload() {
   fi
 }
 
-function rider() {
-  /snap/bin/rider "$1" >/dev/null 2>&1 &
-}
+# function rider() {
+#   /snap/bin/rider "$1" >/dev/null 2>&1 &
+# }
 
-function wbst() {
-  /snap/bin/webstorm "$1" >/dev/null 2>&1 &
-}
+# function wbst() {
+#   /snap/bin/webstorm "$1" >/dev/null 2>&1 &
+# }
 
 mkcd() {
   case "$1" in
@@ -89,4 +88,8 @@ mkcd() {
   ../*) (cd .. && mkdir -p "${1#.}") && cd "$1" ;;
   *) mkdir -p "./$1" && cd "./$1" ;;
   esac
+}
+
+branches() {
+  git branch "$@" --sort=-committerdate --sort=-HEAD --format=$'%(HEAD) %(color:yellow)%(refname:short) %(color:green)(%(committerdate:relative))\t%(color:blue)%(subject)%(color:reset)' --color=$(__fzf_git_color) | column -ts$'\t'
 }

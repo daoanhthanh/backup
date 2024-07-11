@@ -1,5 +1,5 @@
 ; xem thêm ở đây: https://www.autohotkey.com/docs/v1/Hotkeys.htm
-
+; Đặt vào đây để tự chạy: %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
 
 +space::
 {

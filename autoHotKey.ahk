@@ -1,3 +1,6 @@
+; xem thêm ở đây: https://www.autohotkey.com/docs/v1/Hotkeys.htm
+
+
 +space::
 {
     WinSetAlwaysOnTop -1, "A"

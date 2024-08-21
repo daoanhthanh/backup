@@ -229,7 +229,7 @@ Set-Alias -Name initMill -Value 'mill -i init com-lihaoyi/mill-scala-hello.g8'
 # Set-Alias -Name .... -Value { Set-RelativeAlias '../../../' }
 
 
-function LazyDocker {
+function LazyDockerCMD {
   lazydocker
 }
-Set-Alias -Name lzd -Value LazyDocker
+Set-Alias -Name lzd -Value LazyDockerCMD

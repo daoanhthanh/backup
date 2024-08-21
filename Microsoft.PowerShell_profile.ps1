@@ -18,6 +18,9 @@ Set-Alias -Name mkcd -Value New-DirAndCd
 function Thanh_DA { Set-Location -Path D:\thanh_da }
 Set-Alias -Name thanhda -Value Thanh_DA
 
+function M2M { Set-Location -Path D:\m2m }
+Set-Alias -Name mtm -Value M2M
+
 
 function Clone-Git {
   param(
@@ -224,3 +227,9 @@ Set-Alias -Name initMill -Value 'mill -i init com-lihaoyi/mill-scala-hello.g8'
 # Set-Alias -Name .. -Value { Set-RelativeAlias '../' }
 # Set-Alias -Name ... -Value { Set-RelativeAlias '../../' }
 # Set-Alias -Name .... -Value { Set-RelativeAlias '../../../' }
+
+
+function LazyDocker {
+  lazydocker
+}
+Set-Alias -Name lzd -Value LazyDocker

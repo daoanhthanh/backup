@@ -87,13 +87,15 @@ contexts = [
   { context_pattern = 'gke_.*_(?P<var_cluster>[\w-]+)', style = "green", symbol = '💔 gke-$var_cluster ' },
   { context_pattern = "(rancher-desktop|minikube|colima)", style = "green", symbol = "💔 k8s-local" },
 ]
-# [kubernetes.context_alias]
-# 'dev.local.cluster.k8s' = 'dev'
-# '.*/openshift-cluster/.*' = 'openshift'
-# 'gke_.*_(?P<var_cluster>[\w-]+)' = 'gke-$var_cluster'
-# '(rancher-desktop|minikube|colima)' = 'k8s-local'
-# [kubernetes.user_alias]
-# 'gke_.*_(?P<var_cluster>[\w-]+)' = 'use: gke-$var_cluster'
-# 'dev.local.cluster.k8s' = 'dev'
-# '(rancher-desktop|minikube|colima)' = 'k8s-local'
-# 'root/.*' = 'root'
+
+[kubernetes.context_aliases]
+'dev.local.cluster.k8s' = 'dev'
+'.*/openshift-cluster/.*' = 'openshift'
+'gke_.*_(?P<var_cluster>[\w-]+)' = 'gke-$var_cluster'
+'(rancher-desktop|minikube|colima)' = 'k8s-local'
+
+[kubernetes.user_aliases]
+'gke_.*_(?P<var_cluster>[\w-]+)' = 'use: gke-$var_cluster'
+'dev.local.cluster.k8s' = 'dev'
+'(rancher-desktop|minikube|colima)' = 'k8s-local'
+'root/.*' = 'root'

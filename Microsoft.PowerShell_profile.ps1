@@ -1,20 +1,22 @@
-Invoke-Expression (&starship init powershell)
+
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+Invoke-Expression (&starship init powershell)
+fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
 
 
 function New-DirAndCd {
   param(
     [string]$DirectoryName
   )
-    
+
   # Create the directory
   New-Item -ItemType Directory -Path $DirectoryName | Out-Null
-    
+
   # Change to the new directory
   Set-Location $DirectoryName
-} 
+}
 Set-Alias -Name mkcd -Value New-DirAndCd
-  
+
 
 function Thanh_DA { Set-Location -Path D:\thanh_da }
 Set-Alias -Name thanhda -Value Thanh_DA
@@ -24,119 +26,79 @@ Set-Alias -Name mtm -Value M2M
 
 
 function Clone-Git {
-  param(
-    [string]$Repository
-  )
-  
-  git clone $Repository
+  git clone @args
 }
 
 function Push-Git {
-  git push
+  git push @args
 }
 
 function Status-Git {
-  git status
+  git status @args
 }
 
 function Pull-Git {
-  git pull
+  git pull @args
 }
 
 function Branch-Git {
-  git branch
+  git branch @args
 }
 
 function Branches-Git {
-  git branch -a
+  git branch -a @args
 }
 
 function Checkout-Git {
-  param(
-    [Parameter(ValueFromRemainingArguments = $true)]
-    [string[]]$params
-  )
-
-  $mergedParams = $params -join ''
-  $mergedParams = $mergedParams.Trim()
-
-  git checkout $mergedParams
+  git checkout @args
 }
 
 function Add-Git {
-  param(
-    [string]$Files
-  )
-  
-  git add $Files
+  git add @args
 }
 
 function Add-All-Git {
-  git add .
+  git add . @args
 }
 
 function Commit-Git {
-  param(
-    [string]$Message
-  )
-  
-  git commit -m $Message
+  git commit @args
 }
 
 function Amend-Git {
-  git commit --amend
+  git commit --amend @args
 }
 
 function Current-Branch-Git {
-  git branch --show-current
+  git branch --show-current @args
 }
 
 function Merge-Git {
-  param(
-    [Parameter(ValueFromRemainingArguments = $true)]
-    [string[]]$params
-  )
-
-  $mergeParams = $params -join ''
-  $mergeParams = $mergeParams.Trim()
-  
-  git merge $mergeParams
+  git merge @args
 }
 
 function Rebase-Git {
-  param(
-    [Parameter(ValueFromRemainingArguments = $true)]
-    [string[]]$params
-  )
-
-  $rebaseParams = $params -join ''
-  $rebaseParams = $rebaseParams.Trim()
-
-  git rebase $rebaseParams
+  git rebase @args
 }
 
 function Continue-Rebase-Git {
-  git rebase --continue
+  git rebase --continue @args
 }
 
 function Restore-Git {
-  param(
-    [string]$File
-  )
-  
-  git restore $File
+  git restore @args
 }
 
 function Stash-Git {
-  git stash
+  git stash @args
 }
 
 function Git-Init {
-  git init
+  git init @args
 }
 
 function Git-Remote {
-  git remote -v
+  git remote @args
 }
 
 Set-Alias -Name clone -Value Clone-Git
@@ -179,7 +141,7 @@ function Weather-Report($Location) {
   if ([string]::IsNullOrEmpty($Location)) {
     $Location = "hanoi"
   }
-  
+
   curl wttr.in/$Location
 }
 Set-Alias -Name weather -Value Weather-Report
@@ -216,18 +178,18 @@ Set-Alias -Name sbtAkka -Value 'sbt new akka/akka-scala-seed.g8'
 Set-Alias -Name sbtPure -Value 'sbt new scala/scala-seed.g8'
 Set-Alias -Name initMill -Value 'mill -i init com-lihaoyi/mill-scala-hello.g8'
 
-# function Set-RelativeAlias {
-#   param (
-#     [string]$Path
-#   )
+function Set-RelativeAlias {
+  param (
+    [string]$Path
+  )
 
-#   return Set-Location $Path
-# }
+  return Set-Location $Path
+}
 
-# # Set aliases for different levels of relative navigation
-# Set-Alias -Name .. -Value { Set-RelativeAlias '../' }
-# Set-Alias -Name ... -Value { Set-RelativeAlias '../../' }
-# Set-Alias -Name .... -Value { Set-RelativeAlias '../../../' }
+# Set aliases for different levels of relative navigation
+function .. { Set-RelativeAlias '../' }
+function ... { Set-RelativeAlias '../../' }
+function .... { Set-RelativeAlias '../../../' }
 
 
 function LazyDockerCMD {

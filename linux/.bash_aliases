@@ -1,3 +1,6 @@
+# How to run:
+# curl -fsSL "https://raw.githubusercontent.com/daoanhthanh/backup/refs/heads/main/linux/.bash_aliases" -o ~/.bash_aliases
+
 alias lf="ls -l | egrep -v '^d'"
 alias ldir='ls -d */'
 alias clone='git clone'

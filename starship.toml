@@ -1,3 +1,4 @@
+# curl -o ~/.config/starship.toml https://raw.githubusercontent.com/daoanhthanh/backup/refs/heads/main/starship.toml
 # general settings
 command_timeout = 5000
 

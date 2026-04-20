@@ -12,8 +12,8 @@ format = "via [🐳 $context ](blue bold)"
 [character]
 #success_symbol = "[💲](normal)"
 #error_symbol = "[🚫](normal) "
-success_symbol = "[Đào T. ❯](green)"
-error_symbol = "[Đào T. ❯](red)"
+success_symbol = "[Đào Thành. ❯](green)"
+error_symbol = "[Đào Thành. ❯](red)"
 
 
 [cmd_duration]

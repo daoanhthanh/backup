@@ -1,0 +1,12 @@
+window-show-tab-bar = never
+window-theme = ghostty
+window-padding-x = 12
+# window-padding-y = 12
+window-padding-balance = true
+background-opacity = 0.69
+background-blur = true
+font-family = "Cascadia Code NF"
+font-size = 16
+macos-icon = retro
+font-feature = true
+font-thicken = true
